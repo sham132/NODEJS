@@ -1,0 +1,133 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Bookings Nodejs Server",
+        "version": "1.0",
+        "title": "Bookings",
+        "termsOfService": "",
+        "contact": {},
+        "license": {
+            "name": "Booking EULA"
+        }
+    },
+    "host": "localhost:9000",
+    "basePath": "/",
+    "tags": [],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "//user/register": {
+            "post": {
+                "description": "",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "password": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "type": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/user/login": {
+            "post": {
+                "description": "",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "description": ""
+                            },
+                            "password": {
+                                "type": "string",
+                                "description": ""
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "result": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "token": {
+                                        "type": "Longtext"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "team/addTeam": {
+            "post": {
+                "description": "",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "rows": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "v_AccessSBCIncBlockCallID": {
+                                                "type": "integer"
+                                            },
+                                            "v_AccessSBCIncBlockCallPrefix": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "v_ID": {
+                                    "type": "integer",
+                                    "description": ""
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
